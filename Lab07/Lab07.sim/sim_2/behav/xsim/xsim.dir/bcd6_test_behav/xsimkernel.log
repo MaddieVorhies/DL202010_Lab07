@@ -2,3 +2,6 @@ Running: xsim.dir/bcd6_test_behav/xsimk.exe -simmode gui -wdb bcd6_test_behav.wd
 Design successfully loaded
 Design Loading Memory Usage: 6380 KB (Peak: 6380 KB)
 Design Loading CPU Usage: 31 ms
+Simulation completed
+Simulation Memory Usage: 7048 KB (Peak: 7048 KB)
+Simulation CPU Usage: 31 ms
