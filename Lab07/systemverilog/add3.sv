@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
-// Engineer: 
+// Engineer: Maddie Vorhies
 // 
 // Create Date: 10/08/2020 11:42:38 AM
 // Design Name: 
