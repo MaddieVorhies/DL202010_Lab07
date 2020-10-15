@@ -11,6 +11,7 @@
 \usepackage[margin=1in]{geometry}	% Narrower margins
 \usepackage{booktabs}				% Nice formatting of tables
 \usepackage{graphicx}				% Ability to include graphics
+\usepackage[section]{placeins}      % Stops floats from happening
 
 %\setlength\parindent{0pt}	% Do not indent first line of paragraphs 
 \usepackage[parfill]{parskip}		% Line space b/w paragraphs
@@ -60,30 +61,111 @@
 %=========== Body  ====================================
 \begin{document}
 
-\title{ELC 2137 Lab \#\#: Lab Title}
-\author{Put your name(s) here}
+\title{ELC 2137 Lab 07: Binary Coded Decimal}
+\author{Maddie Vorhies}
 
 \maketitle
 
 
 \section*{Summary}
 
-Type the summary of your experiment and results here.  
-
-
-\section*{Q\&A}
-
-Answer questions posed in the lab assignment here.
+The goal of this lab was to implement a 7-segment display, with binary as the input and hex as the output. To do this, I started out by using the double-dabble algorithm to convert hex values to BCD. I then drew the picture for an 11-bit double-dabble circuit and built it. I then created a simulation to test the circuit to make sure that it was properly built. I then took the mux and the 7-segment decoder from Lab 06 and modified it to fit into this lab. Then I created the sseg1 that connected all of those together. Lastly, I created a wrapper to make the circuit appear cleaner and more organized. I then hooked up my board to test out my completed circuit. Overall, I was able to successfully build the circuit and have it display the proper values on the board.
 
 
 \section*{Results}
 
-In this section, put your simulation waveforms, results tables, pictures of hardware, and any other required items.
+\begin{figure}[ht]\centering
+	\begin{tabular}[ht]{c|c|c}
+		Time (ns) & Input & Output\\
+		\midrule
+		0 & 0000 & 0000\\
+		10 & 0001 & 0001\\
+		20 & 0010 & 0010\\
+		30 & 0011 & 0011\\
+		40 & 0100 & 0100\\
+		50 & 0101 & 1000\\
+		60 & 0110 & 1001\\
+		70 & 0111 & 1010\\
+		80 & 1000 & 1011\\
+		90 & 1001 & 1100\\
+		100 & 1010 & 1101\\
+		110 & 1011 & 11100\\
+		120 & 1100 & 1111\\
+		130 & 1101 & 0000\\
+		140 & 1110 & 0001\\
+		150 & 1111 & 0010\\
+		\bottomrule
+	\end{tabular}\medskip
+	
+	\includegraphics [width=1.0\textwidth,trim=640 475 10 135, clip]{Add3_sim}
+	\caption{Simulation Waveform and ERT of Add3}
+	\label{fig:sim_with_table}
+\end{figure}
+	
+	\begin{figure}[ht]\centering
+		\begin{tabular}[ht]{c|c|c|c}
+			Time (ns) & Input & Ouput & decimal\\
+			\midrule
+			0 & 100100 & 00110110 & 36\\
+			10 & 001101 & 00010011 & 13\\
+			20 & 111001 & 01010111 & 57\\
+			\bottomrule
+		\end{tabular}\medskip
+		
+		\includegraphics [width=1.0\textwidth,trim=640 450 10 135, clip]{bcd6_sim}
+		\caption{Simulation Waveform and ERT of 6-bit double dabble circuit}
+		\label{fig:sim_with_table}
+		
+	\end{figure}
 
+	\begin{figure}[ht]\centering
+	\begin{tabular}[ht]{c|c|c|c}
+		Time (ns) & Input & Ouput & decimal\\
+		\midrule
+		0 & 10010011101 & 0001000110000001 & 1181\\
+		10 & 00110110110 & 0000010000111000 & 438\\
+		20 & 11100110001 & 0001100001000001 & 1841\\
+		\bottomrule
+	\end{tabular}\medskip
+	
+	\includegraphics [width=1.0\textwidth,trim=640 275 10 135, clip]{bdc11_sim}
+	\caption{Simulation Waveform and ERT of 11-bit double dabble circuit}
+	\label{fig:sim_with_table}
+	
+\end{figure}
+
+\begin{figure}[ht]\centering
+	\caption{11-bit double dabble circuit drawing}
+	\includegraphics [width=1\textwidth,trim=0 0 0 0, clip]{11bit_circuit}
+\end{figure}
+
+\begin{table}[h]\centering
+	\begin{tabular}{cc}
+		First Digit & Second Digit \\
+		\includegraphics [width=0.5\textwidth,trim=0 0 0 0, clip, angle = 270]{Basys3_pic9} &
+		\includegraphics [width=0.5\textwidth,trim=0 0 0 0, clip, angle = 270]{Basys3_pic8} \\
+	\end{tabular}
+	\caption{Board Pictures}
+	\label{fig:sim_with_table}
+\end{table}
 
 \section*{Code}
 
-Include all of the code you wrote or modified here.
+\Verilog{Lab07/systemverilog/add3.sv}
+
+\Verilog{Lab07/systemverilog/add3_test.sv}
+
+\Verilog{Lab07/systemverilog/bcd6.sv}
+
+\Verilog{Lab07/systemverilog/bcd6_test.sv}
+
+\Verilog{Lab07/systemverilog/bcd11.sv}
+
+\Verilog{Lab07/systemverilog/bcd11_test.sv}
+
+\Verilog{Lab07/systemverilog/sseg1_BCD.sv}
+
+\Verilog{Lab07/systemverilog/sseg1_wrapper.sv}
 
 
 \end{document}

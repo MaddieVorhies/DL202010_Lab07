@@ -3,6 +3,6 @@
 May 27 2020
 20:09:33
 H:/DL202010_Lab07/Lab07/Lab07.sim/sim_2/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
-H:/DL202010_Lab07/Lab07/systemverilog/add3.sv,1602176200,systemVerilog,,H:/DL202010_Lab07/Lab07/systemverilog/bcd6.sv,,add3,,,,,,,,
-H:/DL202010_Lab07/Lab07/systemverilog/bcd6.sv,1602181001,systemVerilog,,H:/DL202010_Lab07/Lab07/systemverilog/bcd6_test.sv,,bcd6,,,,,,,,
-H:/DL202010_Lab07/Lab07/systemverilog/bcd6_test.sv,1602181170,systemVerilog,,,,bcd6_test,,,,,,,,
+H:/DL202010_Lab07/Lab07/systemverilog/add3.sv,1602724062,systemVerilog,,H:/DL202010_Lab07/Lab07/systemverilog/bcd6.sv,,add3,,,,,,,,
+H:/DL202010_Lab07/Lab07/systemverilog/bcd6.sv,1602724085,systemVerilog,,H:/DL202010_Lab07/Lab07/systemverilog/bcd6_test.sv,,bcd6,,,,,,,,
+H:/DL202010_Lab07/Lab07/systemverilog/bcd6_test.sv,1602724060,systemVerilog,,,,bcd6_test,,,,,,,,
